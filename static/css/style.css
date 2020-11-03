@@ -19,10 +19,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:not([class]) {
   position: relative;
 }
 
-a:not(.styled-button)::after {
+a:not([class])::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -33,7 +36,7 @@ a:not(.styled-button)::after {
   transition: width .3s;
 }
 
-a:hover::after {
+a:not([class]):hover::after {
   width: 100%;
 }
 
@@ -48,6 +51,10 @@ p {
   max-width: 1280px;
 }
 
+.inner-container {
+  width: 100%;
+}
+
 .flex-centered {
   display: flex;
   flex-direction: column;
@@ -56,7 +63,7 @@ p {
 }
 
 .full-screen {
-  height: calc(100vh - var(--menu-scroll-height));
+  min-height: calc(100vh - var(--menu-scroll-height));
 }
 
 .secondary-bg {
@@ -143,6 +150,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header-text {
@@ -162,6 +170,19 @@ header {
 .page-subtitle {
   margin-top: 0;
   color: var(--accent-color);
+}
+
+#tagline {
+  padding: 3.5rem 0;
+}
+
+.tagline-title {
+  margin: 0;
+  font-size: 3.5rem;
+}
+
+#newsletter .inner-container {
+  padding: 2rem;
 }
 
 #newsletter-form {
@@ -190,6 +211,10 @@ header {
   padding: 1rem;
   margin: 1rem 0 0.5rem;
   width: 100%;
+}
+
+.newsletter-title {
+  margin: 0;
 }
 
 .info-container {
@@ -284,4 +309,85 @@ header {
 .services-link {
   display: inline-block;
   padding: 0.5rem 1rem;
+}
+
+.instagram-container {
+  width: 100%;
+}
+
+#instagram .inner-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instagram-image img {
+  width: 100%;
+}
+
+footer {
+  height: 7.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+
+  nav {
+    padding: 1rem 0;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-container > div {
+    width: 100%;
+  }
+
+  .info-container .image-shadow {
+    display: none;
+  }
+
+  .text-container {
+    padding: 2rem 1rem;
+  }
+
+  .potrait {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #services {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #services > div {
+    height: 100vh;
+    width: 100%;
+  }
+
+  #instagram .inner-container {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .instagram-image img {
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+  }
+
+  footer {
+    height: auto;
+    padding: 1rem;
+  }
 }
