@@ -173,7 +173,7 @@ header {
 }
 
 .tagline {
-  padding: 3.5rem 0;
+  margin: 3.5rem auto;
 }
 
 .tagline-title {
@@ -181,6 +181,14 @@ header {
   font-size: 3.5rem;
   color: var(--dark-color);
   text-align: center;
+}
+
+#about {
+  margin-bottom: 4.5rem;
+}
+
+#newsletter {
+  margin: 4.5rem auto;
 }
 
 #newsletter .inner-container {
