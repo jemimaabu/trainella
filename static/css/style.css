@@ -1,6 +1,7 @@
 :root {
   --accent-color: #AFDAE3;
   --secondary-color: #D7F8FF;
+  --secondary-color-opaque: rgb(215, 248, 255, 0.5);
   --dark-color: #0087A4;
   --primary-color: #36464f;
   --menu-scroll-height: 7.5vh;
@@ -17,7 +18,7 @@ body {
 }
 
 .cursive {
-  font-family: 'Fondamento', cursive;
+  font-family: 'Stalemate', cursive;
 }
 
 a {
@@ -71,7 +72,7 @@ p {
 }
 
 .secondary-bg {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-opaque);
 }
 
 .styled-button {
@@ -165,6 +166,11 @@ header {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  transition: opacity 500ms;
+}
+
+.page-title.fade-out {
+  opacity: 0;
 }
 
 .page-subtitle {
@@ -180,7 +186,6 @@ header {
   margin: 0;
   font-size: 3.5rem;
   font-weight: 100;
-  color: var(--dark-color);
   text-align: center;
 }
 
@@ -194,6 +199,7 @@ header {
 
 #newsletter .inner-container {
   padding: 2rem;
+  box-shadow: 3px 5px 7px 0px var(--secondary-color);
 }
 
 #newsletter-form {
@@ -345,6 +351,10 @@ footer {
   font-size: .9rem;
 }
 
+.footer-links a + a {
+  margin-left: 1em;
+}
+
 @media only screen and (max-width: 800px) {
   .container {
     width: 100%;
@@ -380,6 +390,7 @@ footer {
 
   .tagline-title {
     font-size: 2.5rem;
+    font-weight: normal;
   }
 
   .potrait {
