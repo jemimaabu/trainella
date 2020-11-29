@@ -439,6 +439,7 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     right: 0;
+    left: 0;
     top: 100%;
     background-color: white;
     width: 100%;
@@ -449,6 +450,15 @@ footer {
 
   #menu-dropdown.expanded {
     height: 50vh;
+  }
+
+  #menu-dropdown .menu-item {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  #menu-dropdown.expanded .menu-item {
+    opacity: 1;
   }
 
   .info-container {
