@@ -68,10 +68,6 @@ p {
   align-items: center;
 }
 
-.full-screen {
-  min-height: calc(100vh - (1.25 * var(--menu-scroll-height)));
-}
-
 .secondary-bg {
   background-color: var(--secondary-color-opaque);
 }
@@ -279,6 +275,7 @@ header {
 }
 
 #services > div {
+  height: 80vh;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -415,7 +412,7 @@ footer {
   }
 
   #services > div {
-    height: 85vh;
+    height: 65vh;
     width: 100%;
   }
 
