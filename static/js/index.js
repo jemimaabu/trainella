@@ -30,12 +30,20 @@ window.addEventListener("scroll", function() {
 const menuButton = document.getElementById("menu-burger");
 const menuDropdown = document.getElementById("menu-dropdown");
 
-menuButton.addEventListener("click", function() {
+const handleMenuDropdown = () => {
 	if (!menuDropdown.classList.contains("expanded")) {
 		menuButton.classList.add("active");
 		menuDropdown.classList.add("expanded");
 	} else {
 		menuButton.classList.remove("active");
 		menuDropdown.classList.remove("expanded");
+	}
+}
+
+menuButton.addEventListener("click", handleMenuDropdown)
+
+menuButton.addEventListener("keypress", function(e) {
+	if(e.key==='Enter'||e.keyCode===13) {
+		handleMenuDropdown()
 	}
 })
