@@ -26,6 +26,21 @@
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+
+	<footer class="container">
+		<div class="footer-copyright">
+			© 2020 Trainella
+		</div>
+		<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer-menu',
+					'menu_id'        => 'footer-menu',
+					'menu_class'		 => 'footer-links',
+				)
+			);
+			?>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
