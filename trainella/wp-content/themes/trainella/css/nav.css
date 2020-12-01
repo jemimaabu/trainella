@@ -1,0 +1,166 @@
+.main-navigation {
+  height: 15vh;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  transition: height .3s;
+  z-index: 99;
+}
+
+.menu-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-links {
+  width: 40%;
+}
+
+.menu-links ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-links li {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: font-size .3s;
+}
+
+.nav-logo {
+  width: 65%;
+  height: 100%;
+}
+
+.nav-logo a {
+  height: 100%;
+}
+
+.nav-logo a::after {
+  display: none;
+}
+
+.nav-logo h1 {
+  margin: 0;
+}
+
+.nav-logo img {
+  height: 100%;
+  object-fit: contain;
+  transition: height .3s;
+}
+
+.menu-toggle{
+  width: 30px;
+  height: 20px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-item, .menu-toggle::before, .menu-toggle::after {
+  width: 100%;
+  left: 0;
+  height: 2px;
+  position: absolute;
+  background-color: var(--black-bg);
+  margin: auto;
+}
+
+.menu-toggle::before, .menu-toggle::after {
+  content: '';
+  transition: all 300ms;
+}
+
+.menu-toggle::before {
+  top: 0;
+}
+
+.menu-toggle::after {
+  bottom: 0;
+}
+
+.burger-item {
+  top: 0;
+  bottom: 0;
+}
+
+.menu-toggle[aria-expanded="true"] {
+  outline: none;
+}
+
+.menu-toggle[aria-expanded="true"]::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .burger-item {
+  display: none
+}
+
+@media only screen and (min-width: 801px) {
+  .main-navigation.scrolled {
+    height: var(--menu-scroll-height);
+  }
+
+  .scrolled li {
+    font-size: 0.8rem;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .main-navigation {
+    height: var(--menu-scroll-height);
+  }
+
+  .menu-links {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    height: 0;
+    right: 0;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    transition: height 500ms;
+  }
+
+  .menu-links ul {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .toggled .menu-links{
+    height: 50vh;
+  }
+
+  .menu-links li {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  .toggled .menu-links li {
+    opacity: 1;
+  }
+}

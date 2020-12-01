@@ -11,6 +11,18 @@
 	if ( ! siteNavigation ) {
 		return;
 	}
+	
+	function handleMenuScroll() {
+		if (document.body.scrollTop > siteNavigation.clientHeight || document.documentElement.scrollTop > siteNavigation.clientHeight) {
+			siteNavigation.classList.add("scrolled")
+		} else {
+			siteNavigation.classList.remove("scrolled")
+		}
+	};
+
+	window.addEventListener("scroll", function() {
+		handleMenuScroll();
+	});
 
 	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
 
