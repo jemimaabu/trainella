@@ -29,7 +29,7 @@
 
 	<footer class="container">
 		<div class="footer-copyright">
-			© 2020 Trainella
+			&copy;<?php echo date('Y'); ?> <?php echo get_bloginfo( 'name' ); ?>
 		</div>
 		<?php
 			wp_nav_menu(
