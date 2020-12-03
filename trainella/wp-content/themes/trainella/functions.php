@@ -145,6 +145,7 @@ function trainella_scripts() {
 	wp_style_add_data( 'trainella-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'trainella-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'trainella-scripts', get_template_directory_uri() . '/js/features.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
