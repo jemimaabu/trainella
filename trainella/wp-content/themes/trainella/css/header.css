@@ -1,0 +1,20 @@
+
+.header-image {
+  height: 85vh;
+  background-color: var(--black-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.page-title {
+  color: #fff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  transition: opacity 500ms;
+}
+
+.page-title.fade-out {
+  opacity: 0;
+}

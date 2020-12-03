@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 @import './css/nav.css';
 @import './css/footer.css';
+@import './css/header.css';
 
 body {
 	margin: 0;
@@ -159,4 +160,9 @@ p {
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;
+}
+
+/* Do not show entry-title*/
+header.entry-header {
+  display: none;
 }
