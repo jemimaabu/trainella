@@ -22,10 +22,11 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Stalemate');
 @import './css/nav.css';
 @import './css/footer.css';
 @import './css/header.css';
+@import './css/tagline.css';
 
 body {
 	margin: 0;
