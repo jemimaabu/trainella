@@ -85,7 +85,8 @@ a:not([class])::after {
   transition: width .3s;
 }
 
-a:not([class]):hover::after {
+a:not([class]):hover::after,
+a[aria-current='page']::after {
   width: 100%;
 }
 
