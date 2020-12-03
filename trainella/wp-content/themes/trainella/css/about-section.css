@@ -1,0 +1,53 @@
+.info-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.info-container > div {
+  width: 50%;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 350px;
+  background-color: var(--secondary-color);
+  right: 25px;
+  top: 20px;
+  z-index: -1;
+}
+
+.potrait {
+  width: 350px;
+}
+
+.text-container p + p {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-container > div {
+    width: 100%;
+  }
+
+  .image-container::before {
+    display: none;
+  }
+
+  .potrait {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+}

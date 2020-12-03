@@ -27,6 +27,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import './css/footer.css';
 @import './css/header.css';
 @import './css/tagline.css';
+@import './css/about-section.css';
+@import './css/services-section.css';
+@import './css/newsletter.css';
+@import './css/social-media.css';
 
 body {
 	margin: 0;
@@ -54,6 +58,7 @@ body {
 
 #primary {
   min-height: 65vh;
+  background-color: white;
 }
 
 .cursive {
