@@ -7,6 +7,12 @@ h6 {
   font-weight: normal !important;
 }
 
+.header-six .header-main .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .newsletter-section .blossomthemes-email-newsletter-wrapper h3,
 section.about-section .widget .widget-title,
 section[class*="-section"] .widget .widget-title,
@@ -79,12 +85,37 @@ section.client-logo-section {
   margin: 0;
 }
 
-.about-section .widget-featured-holder.centered .img-holder {
-  width: 50%;
+section.client-logo-section .widget .widget-title span::before,
+section.client-logo-section .widget .widget-title span::after {
+  content: "";
+  background: rgba(0, 134, 164, 0.75);
+  width: 36px;
+  height: 1.5px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  z-index: -1;
+}
+
+section.about-section {
+  padding-top: 100px;
+}
+
+.about-section
+  .widget_blossomtheme_featured_page_widget:first-of-type
+  .widget-featured-holder
+  .text-holder
+  p {
+  font-size: 0.9em;
+  max-width: 50ch;
+  text-align: justify;
+  line-height: 1.75;
 }
 
 .widget_blossomtheme_featured_page_widget:first-of-type {
   padding-bottom: 100px;
+  border-bottom: 1px solid #ebeef8;
   margin: 0;
 }
 
@@ -132,8 +163,9 @@ section.client-logo-section {
 }
 
 section.newsletter-section {
-  margin: 75px auto;
-  max-width: 1170px;
+  margin: 0;
+  width: 100%;
+  max-width: none;
 }
 
 .instagram-section {
@@ -185,7 +217,36 @@ section.newsletter-section {
   text-align: center;
 }
 
+.footer-t {
+  padding: 10px 0;
+  border-top: 1px solid #ebeef8;
+}
+
+.footer-t .col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-t .widget {
+  margin: 0;
+}
+
+.footer-t p {
+  margin-bottom: 1em;
+}
+
+.footer-t svg {
+  color: black;
+}
+
 @media screen and (min-width: 1025px) {
+  .header-six .header-t {
+    padding: 15px 0;
+    text-align: center;
+  }
+
   .header-one .container {
     padding-top: 0;
     padding-bottom: 0;
@@ -194,50 +255,35 @@ section.newsletter-section {
   .about-section
     .widget_blossomtheme_featured_page_widget:first-of-type
     .img-holder {
-    margin-left: 20px;
-    width: calc(50% - 40px);
+    width: calc(50% - 1em);
     position: relative;
-  }
-
-  .about-section
-    .widget_blossomtheme_featured_page_widget:first-of-type
-    .img-holder::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #d7f8ff;
-    right: 20px;
-    top: 20px;
-    z-index: -1;
   }
 
   .about-section
     .widget_blossomtheme_featured_page_widget:first-of-type
     .widget-featured-holder
     .text-holder {
-    width: 50%;
+    width: calc(50% - 1em);
     padding-left: 2em;
   }
 
   .about-section .widget_blossomtheme_featured_page_widget:not(:first-of-type) {
-		position: relative;
+    position: relative;
     width: calc(50% - 1em);
     height: 75vh;
     display: flex;
     align-items: center;
     float: left;
-    margin: 20px 0 60px;
+    margin: 100px 0 60px;
   }
-	
-	.about-section .widget_blossomtheme_featured_page_widget:nth-of-type(2) {
-		margin-right: 1em;
-	}
-	
-	
-	.about-section .widget_blossomtheme_featured_page_widget:nth-of-type(3) {
-		margin-left: 1em;
-	}
+
+  .about-section .widget_blossomtheme_featured_page_widget:nth-of-type(2) {
+    margin-right: 1em;
+  }
+
+  .about-section .widget_blossomtheme_featured_page_widget:nth-of-type(3) {
+    margin-left: 1em;
+  }
 
   .about-section
     .widget_blossomtheme_featured_page_widget:not(:first-of-type)
@@ -246,7 +292,7 @@ section.newsletter-section {
     width: 100%;
     text-align: center;
     position: absolute;
-		padding: 0;
+    padding: 0;
   }
 
   .about-section
@@ -264,12 +310,16 @@ section.newsletter-section {
     .featured_page_content {
     color: #fff;
     max-height: 0;
-		overflow: hidden;
+    overflow: hidden;
     transition: max-height 1s;
   }
-  
+
   .about-section
     .widget_blossomtheme_featured_page_widget:not(:first-of-type):hover
+    .widget-featured-holder
+    .featured_page_content,
+  .about-section
+    .widget_blossomtheme_featured_page_widget:not(:first-of-type):focus-within
     .widget-featured-holder
     .featured_page_content {
     max-height: 300px;
@@ -294,13 +344,16 @@ section.newsletter-section {
   .about-section
     .widget_blossomtheme_featured_page_widget:not(:first-of-type):hover
     .img-holder
+    img,
+  .about-section
+    .widget_blossomtheme_featured_page_widget:not(:first-of-type):focus-within
+    .img-holder
     img {
     filter: grayscale(0);
   }
 }
 
 @media screen and (max-width: 1199px) {
-  section.newsletter-section,
   .instagram-section {
     max-width: 1000px;
   }
@@ -315,11 +368,21 @@ section.newsletter-section {
     display: none;
   }
 
-  section.newsletter-section,
   .instagram-section {
     max-width: 768px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .about-section .widget_blossomtheme_featured_page_widget {
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .about-section
+    .widget_blossomtheme_featured_page_widget
+    + .widget_blossomtheme_featured_page_widget {
+    margin-top: 100px;
   }
 
   .widget_blossomtheme_featured_page_widget:not(:first-of-type)
@@ -327,12 +390,41 @@ section.newsletter-section {
     height: auto;
   }
 
+  .about-section .widget-featured-holder .featured_page_content {
+    text-align: center;
+  }
+
+  .about-section
+    .widget_blossomtheme_featured_page_widget:first-of-type
+    .widget-featured-holder
+    .text-holder
+    p {
+    margin: 0 auto 20px;
+  }
+
   .about-section .widget-featured-holder .img-holder {
     height: 45vh;
+  }
+
+  .about-section
+    .widget_blossomtheme_featured_page_widget:first-of-type
+    .img-holder {
+    text-align: center;
+  }
+
+  .about-section
+    .widget_blossomtheme_featured_page_widget:first-of-type
+    .img-holder
+    img {
+    width: auto;
   }
 }
 
 @media screen and (max-width: 767px) {
+  .banner .wp-custom-header::before {
+    content: none;
+  }
+
   .container {
     max-width: 700px;
   }
@@ -352,8 +444,19 @@ section.newsletter-section {
     color: #fff;
   }
 
-  section.newsletter-section,
   .instagram-section {
     max-width: 700px;
+  }
+
+  .footer-t .col {
+    justify-content: center;
+  }
+
+  .footer-t .textwidget {
+    margin: 0 20px;
+  }
+
+  .footer-t p {
+    margin-bottom: 0;
   }
 }
